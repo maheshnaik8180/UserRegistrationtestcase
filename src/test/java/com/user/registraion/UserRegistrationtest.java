@@ -58,6 +58,21 @@ public class UserRegistrationtest {
 
     }
 
+    @Test
+    public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
+        UserRegistration user = new UserRegistration();
+        boolean result = user.validatePhoneNumber("91 9087654321");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPhoneNumber_WhenNotProper_ShouldReturnTrue() {
+        UserRegistration user = new UserRegistration();
+        boolean result = user.validatePhoneNumber("989832164");
+        Assert.assertFalse(result);
+    }
+
+
 
 }
 
