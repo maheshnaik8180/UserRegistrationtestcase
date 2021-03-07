@@ -42,6 +42,22 @@ public class UserRegistrationtest {
 
     }
 
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        UserRegistration user = new UserRegistration();
+        boolean result = user.validateEmail("naikmahesh.naik@gmail.com");
+        Assert.assertTrue(result);
+
+    }
+
+    @Test
+    public void givenEmail_WhenShort_ShouldReturnTrue() {
+        UserRegistration user = new UserRegistration();
+        boolean result = user.validateEmail("@gmail.com");
+        Assert.assertFalse(result);
+
+    }
+
 
 }
 
