@@ -73,6 +73,19 @@ public class UserRegistrationtest {
     }
 
 
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue() {
+        UserRegistration user = new UserRegistration();
+        boolean result = user.validatePassword("Abcd#$%12345");
+        Assert.assertTrue(result);
 
+    }
+
+    @Test
+    public void givenPassword_WhenNotProper_ShouldReturnTrue() {
+        UserRegistration user = new UserRegistration();
+        boolean result = user.validatePassword("Ab1cd3434");
+        Assert.assertFalse(result);
+    }
 }
 
